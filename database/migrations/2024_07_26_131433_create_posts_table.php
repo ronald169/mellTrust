@@ -35,17 +35,17 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->unsignedInteger('serie_id')->nullable()->default(null);
+            $table->unsignedBigInteger('serie_id')->nullable()->default(null);
             $table->foreign('serie_id')
                 ->references('id')
                 ->on('series')
                 ->nullable()
                 ->default(null)
-                ->onDelete();
+                ->onDelete('cascade');
 
-            $table->foreign('parent_id')->nullable()->default(null);
+            $table->unsignedBigInteger('parent_id')->nullable()->default(null);
             $table->foreign('parent_id')
-                ->references('parent_id')
+                ->references('id')
                 ->on('posts')
                 ->nullable()
                 ->default(null);

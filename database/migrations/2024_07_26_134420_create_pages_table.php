@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('body');
+            $table->string('seo_title');
+            $table->text('meta_description');
+            $table->text('meta_keywords');
         });
     }
 
